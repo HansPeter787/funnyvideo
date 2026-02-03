@@ -41,4 +41,21 @@
 <script>
   const start = document.getElementById("start");
   const video = document.getElementById("video");
-  const soun
+  const sound = document.getElementById("sound");
+
+  start.addEventListener("click", async () => {
+    // Vollbild erzwingen
+    if (document.documentElement.requestFullscreen) {
+      await document.documentElement.requestFullscreen();
+    }
+
+    start.style.display = "none";
+    video.style.display = "block";
+
+    video.play();
+    sound.play();
+  });
+</script>
+
+</body>
+</html>
