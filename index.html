@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  background: black;
-}
-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Totally Harmless</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    #start {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-family: Arial, sans-serif;
+    }
+    video {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
-<video autoplay playsinline>
-  <source src="jumpscare.mp4" type="video/mp4">
-</video>
-</body>
-</html>
+
+<div id="start">KLICK.</div>
+
+<video id="video" src="jumpscare.mp4"></video>
+<audio id="sound" src="scream.mp3"></audio>
+
+<script>
+  const start = document.getElementById("start");
+  const video = document.getElementById("video");
+  const soun
